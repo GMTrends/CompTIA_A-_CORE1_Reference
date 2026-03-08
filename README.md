@@ -10,8 +10,8 @@ This reference covers "must-know" facts that frequently appear as "traps" or "tr
 - **Printer Tech:** A detailed breakdown of the 7-step Laser Printing (EP) process.
 
 ## 🚀 How to Use
-1. **Live View:** [Insert your GitHub Pages URL here]
-2. **Local View:** Download the `CompTIA_A+_Core1_Memorization_Reference.html` file and open it in any modern web browser.
+1. **Live View:** https://gmtrends.github.io/CompTIA_A-_CORE1_Reference
+2. **Local View:** Download the `index.html` file and open it in any modern web browser.
 
 ## 🛠 Tech Stack
 - **HTML5 / CSS3:** Uses a dark-mode, high-contrast UI designed for readability.
