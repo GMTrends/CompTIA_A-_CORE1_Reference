@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CompTIA A+ Core 1 (220-1201) — Memorization Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #141820;
+    --surface2: #1a2030;
+    --border: #252d3d;
+    --accent: #3b82f6;
+    --accent2: #f59e0b;
+    --accent3: #10b981;
+    --accent4: #ef4444;
+    --accent5: #8b5cf6;
+    --text: #e2e8f0;
+    --text-muted: #8892a4;
+    --text-bright: #f1f5f9;
+    --mono: 'JetBrains Mono', monospace;
+    --head: 'Barlow Condensed', sans-serif;
+    --body: 'Barlow', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* TOP HEADER */
+  .masthead {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 32px 40px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .masthead .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+  }
+  .masthead h1 {
+    font-family: var(--head);
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--text-bright);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+  .masthead h1 span { color: var(--accent); }
+  .masthead .sub {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 8px;
+  }
+  .masthead .domains {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .domain-pill {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-family: var(--mono);
+    color: var(--text-muted);
+  }
+  .domain-pill span { color: var(--accent2); font-weight: 700; }
+
+  /* MAIN LAYOUT */
+  .container { max-width: 1400px; margin: 0 auto; padding: 32px 40px; }
+
+  /* SECTION TITLES */
+  .section {
+    margin-bottom: 40px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-num {
+    background: var(--accent);
+    color: white;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .section-num.green { background: var(--accent3); }
+  .section-num.amber { background: var(--accent2); color: #000; }
+  .section-num.red { background: var(--accent4); }
+  .section-num.purple { background: var(--accent5); }
+
+  .section-title {
+    font-family: var(--head);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-bright);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* TABLES */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  thead { background: var(--surface2); }
+  th {
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 9px 14px;
+    border-bottom: 1px solid rgba(37,45,61,0.6);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(59,130,246,0.04); }
+
+  .port { color: var(--accent2); font-weight: 700; }
+  .proto { color: var(--accent); font-weight: 600; }
+  .tcp-badge {
+    display: inline-block;
+    background: rgba(59,130,246,0.2);
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 2px;
+    border: 1px solid rgba(59,130,246,0.4);
+  }
+  .udp-badge {
+    display: inline-block;
+    background: rgba(245,158,11,0.2);
+    color: var(--accent2);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 2px;
+    border: 1px solid rgba(245,158,11,0.4);
+  }
+  .both-badge {
+    display: inline-block;
+    background: rgba(16,185,129,0.2);
+    color: var(--accent3);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 2px;
+    border: 1px solid rgba(16,185,129,0.4);
+  }
+  .tag-green { color: var(--accent3); font-weight: 600; }
+  .tag-amber { color: var(--accent2); font-weight: 600; }
+  .tag-red { color: var(--accent4); font-weight: 600; }
+  .tag-blue { color: var(--accent); font-weight: 600; }
+  .tag-purple { color: var(--accent5); font-weight: 600; }
+
+  /* NOTE BOXES */
+  .note {
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.25);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-top: 10px;
+    color: var(--text);
+  }
+  .note strong { color: var(--accent); }
+  .note.amber {
+    background: rgba(245,158,11,0.08);
+    border-color: rgba(245,158,11,0.25);
+    border-left-color: var(--accent2);
+  }
+  .note.amber strong { color: var(--accent2); }
+  .note.green {
+    background: rgba(16,185,129,0.08);
+    border-color: rgba(16,185,129,0.25);
+    border-left-color: var(--accent3);
+  }
+  .note.green strong { color: var(--accent3); }
+  .note.red {
+    background: rgba(239,68,68,0.08);
+    border-color: rgba(239,68,68,0.25);
+    border-left-color: var(--accent4);
+  }
+  .note.red strong { color: var(--accent4); }
+
+  /* GRID LAYOUT FOR SMALLER SECTIONS */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  @media (max-width: 900px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .container { padding: 20px; }
+  }
+
+  /* CARD */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+  }
+  .card h3 {
+    font-family: var(--head);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-bright);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* STEP LIST */
+  .step-list { list-style: none; }
+  .step-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(37,45,61,0.5);
+    font-family: var(--mono);
+    font-size: 12.5px;
+  }
+  .step-list li:last-child { border-bottom: none; }
+  .step-num {
+    background: var(--accent);
+    color: white;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* WIRING DIAGRAM */
+  .wire-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .wire-standard h4 {
+    font-family: var(--head);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-bright);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .wire-pin {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .pin-num {
+    width: 20px; height: 20px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .wg  { color: #22c55e; } /* white-green */
+  .g   { color: #16a34a; } /* green */
+  .wo  { color: #f97316; } /* white-orange */
+  .b   { color: #3b82f6; } /* blue */
+  .wb  { color: #93c5fd; } /* white-blue */
+  .o   { color: #ea580c; } /* orange */
+  .wbr { color: #a78bfa; } /* white-brown */
+  .br  { color: #92400e; } /* brown */
+  .wr  { color: #ef4444; } /* white-red (same as white-orange for 568A) */
+
+  /* RAID visual */
+  .raid-indicator {
+    display: inline-flex;
+    gap: 3px;
+    margin-bottom: 4px;
+  }
+  .raid-disk {
+    width: 10px; height: 18px;
+    border-radius: 2px;
+    border: 1px solid;
+  }
+  .disk-normal { background: rgba(59,130,246,0.3); border-color: var(--accent); }
+  .disk-mirror { background: rgba(16,185,129,0.3); border-color: var(--accent3); }
+  .disk-parity { background: rgba(245,158,11,0.3); border-color: var(--accent2); }
+  .disk-stripe { background: rgba(239,68,68,0.3); border-color: var(--accent4); }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0 16px;
+  }
+
+  /* SEPARATOR LABEL */
+  .sep-label {
+    font-family: var(--head);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 40px 0 24px;
+    position: relative;
+  }
+  .sep-label::before, .sep-label::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 80px);
+    height: 1px;
+    background: var(--border);
+  }
+  .sep-label::before { left: 0; }
+  .sep-label::after { right: 0; }
+
+  /* USB chip color bands */
+  .usb-black { color: #94a3b8; }
+  .usb-blue  { color: var(--accent); }
+  .usb-teal  { color: var(--accent3); }
+  .usb-red   { color: var(--accent4); }
+
+  /* Scrollable large tables */
+  .table-wrap { overflow-x: auto; }
+
+  /* Highlight rows */
+  .row-highlight td { background: rgba(59,130,246,0.07) !important; }
+  .row-hl-green td { background: rgba(16,185,129,0.06) !important; }
+
+  /* footer */
+  .footer {
+    text-align: center;
+    padding: 32px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="badge">220-1201</div>
+  <h1>CompTIA A+ Core 1<br><span>Memorization Reference</span></h1>
+  <div class="sub">Pure memory content — port numbers · wireless standards · cables · RAM · RAID · protocols</div>
+  <div class="domains">
+    <span class="domain-pill">Domain 1 <span>13%</span> Mobile Devices</span>
+    <span class="domain-pill">Domain 2 <span>23%</span> Networking</span>
+    <span class="domain-pill">Domain 3 <span>25%</span> Hardware</span>
+    <span class="domain-pill">Domain 4 <span>11%</span> Virtualization & Cloud</span>
+    <span class="domain-pill">Domain 5 <span>28%</span> Troubleshooting</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ═══════════════════════════════════════════════ -->
+<div class="sep-label">Domain 2 — Networking</div>
+<!-- ═══════════════════════════════════════════════ -->
+
+<!-- PORT NUMBERS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">OBJ 2.1</div>
+    <div class="section-title">TCP/UDP Ports & Protocols</div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Port(s)</th>
+        <th>Protocol</th>
+        <th>Full Name</th>
+        <th>TCP/UDP</th>
+        <th>What It Does / Exam Trigger</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="port">20 / 21</td><td class="proto">FTP</td><td>File Transfer Protocol</td><td><span class="tcp-badge">TCP</span></td><td>File transfer — unencrypted. Port 20 = data, Port 21 = commands</td></tr>
+      <tr class="row-highlight"><td class="port">22</td><td class="proto">SSH / SFTP / SCP</td><td>Secure Shell</td><td><span class="tcp-badge">TCP</span></td><td>Encrypted remote access + secure file transfer. "Secure" = port 22</td></tr>
+      <tr><td class="port">23</td><td class="proto">Telnet</td><td>Teletype Network</td><td><span class="tcp-badge">TCP</span></td><td>Insecure remote access. Replaced by SSH. Never use on exam</td></tr>
+      <tr class="row-highlight"><td class="port">25</td><td class="proto">SMTP</td><td>Simple Mail Transfer Protocol</td><td><span class="tcp-badge">TCP</span></td><td>Sends email between mail servers (outgoing)</td></tr>
+      <tr><td class="port">53</td><td class="proto">DNS</td><td>Domain Name System</td><td><span class="both-badge">TCP+UDP</span></td><td>Resolves domain names to IP addresses. UDP for queries, TCP for zone transfers</td></tr>
+      <tr class="row-highlight"><td class="port">67 / 68</td><td class="proto">DHCP</td><td>Dynamic Host Config Protocol</td><td><span class="udp-badge">UDP</span></td><td>Auto IP assignment. 67 = server, 68 = client</td></tr>
+      <tr><td class="port">80</td><td class="proto">HTTP</td><td>Hypertext Transfer Protocol</td><td><span class="tcp-badge">TCP</span></td><td>Unencrypted web traffic</td></tr>
+      <tr class="row-highlight"><td class="port">110</td><td class="proto">POP3</td><td>Post Office Protocol v3</td><td><span class="tcp-badge">TCP</span></td><td>Downloads email, deletes from server. Single device use</td></tr>
+      <tr><td class="port">137–139</td><td class="proto">NetBIOS/NetBT</td><td>Network Basic I/O System</td><td><span class="both-badge">TCP+UDP</span></td><td>Legacy Windows networking, name resolution on older networks</td></tr>
+      <tr class="row-highlight"><td class="port">143</td><td class="proto">IMAP</td><td>Internet Mail Access Protocol</td><td><span class="tcp-badge">TCP</span></td><td>Email syncs across multiple devices — leaves mail on server</td></tr>
+      <tr><td class="port">389</td><td class="proto">LDAP</td><td>Lightweight Directory Access Protocol</td><td><span class="tcp-badge">TCP</span></td><td>Directory services — queries Active Directory / user databases</td></tr>
+      <tr class="row-highlight"><td class="port">443</td><td class="proto">HTTPS</td><td>HTTP Secure</td><td><span class="tcp-badge">TCP</span></td><td>Encrypted web traffic (TLS/SSL). "HTTPS doesn't work" = port 443 blocked</td></tr>
+      <tr><td class="port">445</td><td class="proto">SMB / CIFS</td><td>Server Message Block</td><td><span class="tcp-badge">TCP</span></td><td>Windows file & printer sharing. "Can't access shared folders" = check 445</td></tr>
+      <tr class="row-highlight"><td class="port">3389</td><td class="proto">RDP</td><td>Remote Desktop Protocol</td><td><span class="tcp-badge">TCP</span></td><td>Full GUI remote desktop. "Remote control with graphics" = RDP = 3389</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="grid-2" style="margin-top:14px;">
+    <div class="note"><strong>TCP (Connection-Oriented):</strong> FTP, SSH, Telnet, SMTP, HTTP, POP3, IMAP, LDAP, HTTPS, SMB, RDP — most protocols are TCP</div>
+    <div class="note amber"><strong>UDP (Connectionless):</strong> DHCP (67/68), DNS (53 queries), NTP (123) — fast, no handshake, fire-and-forget</div>
+  </div>
+  <div class="note green" style="margin-top:10px;">
+    <strong>KEY EXAM TRAP:</strong> POP3 (110) = downloads and <em>deletes</em> from server. IMAP (143) = syncs and <em>keeps</em> on server. Multiple devices = IMAP. Single device = POP3.
+  </div>
+</div>
+
+<!-- 802.11 WIRELESS STANDARDS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">OBJ 2.2</div>
+    <div class="section-title">802.11 Wireless Standards</div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Standard</th>
+        <th>Wi-Fi Name</th>
+        <th>Frequency Band(s)</th>
+        <th>Max Speed</th>
+        <th>Key Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="proto">802.11a</td><td>—</td><td>5 GHz only</td><td>54 Mbps</td><td>Older, limited business adoption; early 5 GHz</td></tr>
+      <tr><td class="proto">802.11b</td><td>—</td><td>2.4 GHz only</td><td>11 Mbps</td><td>First widely adopted standard; prone to microwave/Bluetooth interference</td></tr>
+      <tr><td class="proto">802.11g</td><td>—</td><td>2.4 GHz only</td><td>54 Mbps</td><td>Backward compatible with b; same interference issues</td></tr>
+      <tr class="row-highlight"><td class="proto">802.11n</td><td class="tag-blue">Wi-Fi 4</td><td class="tag-blue">2.4 AND 5 GHz</td><td>300–600 Mbps</td><td><strong>First dual-band standard.</strong> Introduced MIMO. Backward compatible with b/g</td></tr>
+      <tr class="row-highlight"><td class="proto">802.11ac</td><td class="tag-amber">Wi-Fi 5</td><td class="tag-amber">5 GHz only</td><td>~1–6.9 Gbps</td><td><strong>5 GHz only.</strong> MU-MIMO for multiple devices simultaneously</td></tr>
+      <tr class="row-highlight"><td class="proto">802.11ax</td><td class="tag-green">Wi-Fi 6 / 6E</td><td class="tag-green">2.4 + 5 + 6 GHz</td><td>~9.6 Gbps</td><td><strong>Wi-Fi 6E adds 6 GHz band.</strong> OFDMA + MU-MIMO. Most efficient standard</td></tr>
+      <tr><td class="proto">802.11be</td><td>Wi-Fi 7</td><td>2.4 + 5 + 6 GHz</td><td>46+ Gbps</td><td>Awareness only — emerging. Not yet on most exam questions</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="grid-3" style="margin-top:14px;">
+    <div class="note red"><strong>🔴 MUST KNOW:</strong> 802.11ac = Wi-Fi 5 = 5 GHz ONLY (no 2.4 GHz)</div>
+    <div class="note amber"><strong>🟡 MUST KNOW:</strong> 802.11n = Wi-Fi 4 = FIRST dual-band (2.4 + 5 GHz)</div>
+    <div class="note green"><strong>🟢 MUST KNOW:</strong> 802.11ax (Wi-Fi 6E) = ONLY standard with 6 GHz band</div>
+  </div>
+</div>
+
+<!-- FREQUENCY BANDS & CHANNELS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num amber">OBJ 2.2</div>
+    <div class="section-title">Wi-Fi Frequency Bands & Channels</div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Band</th>
+        <th>Range</th>
+        <th>Speed</th>
+        <th>Interference</th>
+        <th>Non-Overlapping Channels</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="tag-amber">2.4 GHz</td><td>Longest</td><td>Slowest</td><td class="tag-red">HIGH — microwaves, Bluetooth, baby monitors</td><td class="tag-amber">3 → channels <strong>1, 6, 11</strong></td><td>US: Ch 1–11. World: Ch 1–13. Japan: Ch 1–14</td></tr>
+      <tr><td class="tag-blue">5 GHz</td><td>Medium</td><td>Fast</td><td class="tag-green">LOW</td><td>24</td><td>More channels, faster, less congested</td></tr>
+      <tr><td class="tag-green">6 GHz</td><td>Shortest</td><td>Fastest</td><td class="tag-green">MINIMAL</td><td>59</td><td>Wi-Fi 6E / 802.11ax only. No legacy device interference</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note red" style="margin-top:10px;"><strong>🔴 HIGHEST TESTED FACT:</strong> The 3 non-overlapping channels on 2.4 GHz are <strong>1, 6, and 11</strong>. When setting up multiple access points in the same area, assign them these three channels to prevent interference.</div>
+</div>
+
+<!-- DNS RECORDS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">OBJ 2.4</div>
+    <div class="section-title">DNS Record Types</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Record</th><th>Name</th><th>What It Does</th><th>Exam Trigger</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="proto">A</td><td>Address</td><td>Maps domain → <strong>IPv4</strong> address</td><td>"Resolve domain to IPv4"</td></tr>
+      <tr><td class="proto">AAAA</td><td>Quad-A</td><td>Maps domain → <strong>IPv6</strong> address</td><td>"Resolve domain to IPv6"</td></tr>
+      <tr><td class="proto">CNAME</td><td>Canonical Name</td><td>Domain alias — points one name to another name (not an IP)</td><td>"Domain alias / redirect / multiple names same server"</td></tr>
+      <tr><td class="proto">MX</td><td>Mail Exchanger</td><td>Directs email to correct mail server. Lower number = higher priority</td><td>"Email delivery for a domain"</td></tr>
+      <tr><td class="proto">TXT</td><td>Text</td><td>Free-form text — used for domain verification and email security (SPF/DKIM/DMARC)</td><td>"Spam prevention / email authentication"</td></tr>
+    </tbody>
+  </table>
+  <div class="grid-3" style="margin-top:12px;">
+    <div class="note"><strong>SPF</strong> — Lists which servers are allowed to send email for your domain. Prevents spoofed "from" addresses.</div>
+    <div class="note amber"><strong>DKIM</strong> — Adds a digital signature to emails. Proves the email wasn't tampered with in transit.</div>
+    <div class="note green"><strong>DMARC</strong> — Policy for what to do when SPF or DKIM fails. Reject, quarantine, or report.</div>
+  </div>
+</div>
+
+<!-- PoE STANDARDS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num green">OBJ 2.5</div>
+    <div class="section-title">Power over Ethernet (PoE) Standards</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Standard</th><th>Name</th><th>Max Wattage per Port</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="proto">802.3af</td><td>PoE</td><td class="port">15.4W</td><td>Original PoE spec. Powers basic VoIP phones, simple cameras</td></tr>
+      <tr class="row-highlight"><td class="proto">802.3at</td><td>PoE+</td><td class="port">30W</td><td>Powers WAPs, advanced IP cameras</td></tr>
+      <tr class="row-highlight"><td class="proto">802.3bt</td><td>PoE++</td><td class="port">60W (Type 3) / 100W (Type 4)</td><td>Powers laptops, smart TVs, high-powered devices. Backward compatible with 802.3af/at</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="margin-top:10px;"><strong>Power Injector:</strong> Adds PoE capability to a non-PoE switch — connects inline between the switch and the device. Max distance = 100 meters (same as standard Ethernet).</div>
+</div>
+
+<!-- IPv4 ADDRESSING -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num amber">OBJ 2.6</div>
+    <div class="section-title">IPv4 Addressing — Key Ranges</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Range</th><th>Class</th><th>Type</th><th>Subnet Mask</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="proto">10.0.0.0 – 10.255.255.255</td><td>A</td><td class="tag-green">Private</td><td>255.0.0.0 (/8)</td><td>Largest block. Used in large enterprises</td></tr>
+      <tr><td class="proto">172.16.0.0 – 172.31.255.255</td><td>B</td><td class="tag-green">Private</td><td>255.255.0.0 (/16)</td><td>Medium block. Enterprise use</td></tr>
+      <tr><td class="proto">192.168.0.0 – 192.168.255.255</td><td>C</td><td class="tag-green">Private</td><td>255.255.255.0 (/24)</td><td>Most common — home routers default to 192.168.1.x or 192.168.0.x</td></tr>
+      <tr class="row-highlight"><td class="proto">169.254.0.0 – 169.254.255.255</td><td>—</td><td class="tag-amber">APIPA</td><td>255.255.0.0 (/16)</td><td><strong>Auto-assigned when DHCP fails.</strong> Device can only talk to other APIPA addresses on same network. No internet.</td></tr>
+      <tr><td class="proto">127.0.0.1</td><td>—</td><td class="tag-blue">Loopback</td><td>—</td><td>Tests local TCP/IP stack. "Ping yourself." Never routable.</td></tr>
+    </tbody>
+  </table>
+  <div class="note red" style="margin-top:10px;"><strong>🔴 APIPA EXAM TRIGGER:</strong> User's IP is 169.254.x.x = DHCP server unreachable / DHCP failure. Can't reach internet. Fix = check DHCP server or set a static IP.</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════ -->
+<div class="sep-label">Domain 3 — Hardware</div>
+<!-- ═══════════════════════════════════════════════ -->
+
+<!-- CABLE CATEGORIES -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">OBJ 3.2</div>
+    <div class="section-title">Ethernet Cable Categories</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Category</th><th>Max Speed</th><th>Max Distance</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="proto">Cat 5</td><td>100 Mbps</td><td>100m</td><td>Obsolete. Fast Ethernet. Not on most modern installs</td></tr>
+      <tr><td class="proto">Cat 5e</td><td>1 Gbps</td><td>100m</td><td>Most common in older home/office installs. "e" = enhanced (reduced crosstalk)</td></tr>
+      <tr class="row-highlight"><td class="proto">Cat 6</td><td>1 Gbps (10 Gbps @ 55m)</td><td>100m (55m for 10G)</td><td>Thicker wire, better shielding. Current standard for most new installs</td></tr>
+      <tr class="row-highlight"><td class="proto">Cat 6a</td><td>10 Gbps</td><td>100m</td><td>"a" = augmented. Full 100m at 10 Gbps. Stiffer, harder to route. Required for PoE++</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="margin-top:10px;"><strong>All copper Ethernet cables max at 100 meters (328 ft).</strong> STP = Shielded Twisted Pair (used near EMI sources). UTP = Unshielded (standard). Plenum-rated = fire-safe insulation for use in HVAC plenum spaces.</div>
+</div>
+
+<!-- T568A / T568B -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num amber">OBJ 3.2</div>
+    <div class="section-title">T568A vs T568B Wiring Standards</div>
+  </div>
+  <div class="wire-grid">
+    <div class="wire-standard">
+      <h4 style="color: var(--accent3);">T568A — "Government / older"</h4>
+      <div class="wire-pin"><span class="pin-num">1</span><span class="wg">White-Green</span></div>
+      <div class="wire-pin"><span class="pin-num">2</span><span class="g">Green</span></div>
+      <div class="wire-pin"><span class="pin-num">3</span><span class="wo">White-Orange</span></div>
+      <div class="wire-pin"><span class="pin-num">4</span><span class="b">Blue</span></div>
+      <div class="wire-pin"><span class="pin-num">5</span><span class="wb">White-Blue</span></div>
+      <div class="wire-pin"><span class="pin-num">6</span><span class="o">Orange</span></div>
+      <div class="wire-pin"><span class="pin-num">7</span><span class="wbr">White-Brown</span></div>
+      <div class="wire-pin"><span class="pin-num">8</span><span class="br">Brown</span></div>
+    </div>
+    <div class="wire-standard">
+      <h4 style="color: var(--accent2);">T568B — "Business standard / most common"</h4>
+      <div class="wire-pin"><span class="pin-num">1</span><span class="wo">White-Orange</span></div>
+      <div class="wire-pin"><span class="pin-num">2</span><span class="o">Orange</span></div>
+      <div class="wire-pin"><span class="pin-num">3</span><span class="wg">White-Green</span></div>
+      <div class="wire-pin"><span class="pin-num">4</span><span class="b">Blue</span></div>
+      <div class="wire-pin"><span class="pin-num">5</span><span class="wb">White-Blue</span></div>
+      <div class="wire-pin"><span class="pin-num">6</span><span class="g">Green</span></div>
+      <div class="wire-pin"><span class="pin-num">7</span><span class="wbr">White-Brown</span></div>
+      <div class="wire-pin"><span class="pin-num">8</span><span class="br">Brown</span></div>
+    </div>
+  </div>
+  <div class="note" style="margin-top:14px;"><strong>Straight-through cable:</strong> Both ends same standard (T568B–T568B). Used for PC to switch, switch to router. <strong>Crossover cable:</strong> One end T568A, one end T568B. Used to connect same-type devices (PC to PC, switch to switch — though modern devices auto-negotiate).</div>
+</div>
+
+<!-- CONNECTOR TYPES -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num green">OBJ 3.2</div>
+    <div class="section-title">Connector Types — Quick Reference</div>
+  </div>
+  <div class="grid-2">
+    <table>
+      <thead><tr><th>Connector</th><th>Used For</th></tr></thead>
+      <tbody>
+        <tr><td class="proto">RJ-11</td><td>Telephone/DSL — 4 or 6 pins, small</td></tr>
+        <tr><td class="proto">RJ-45</td><td>Ethernet networking — 8 pins</td></tr>
+        <tr><td class="proto">F-type</td><td>Coaxial cable — cable TV, cable modem</td></tr>
+        <tr><td class="proto">ST</td><td>Fiber — Straight Tip. Bayonet twist-lock. Older</td></tr>
+        <tr><td class="proto">SC</td><td>Fiber — Subscriber Connector. Square push-pull</td></tr>
+        <tr><td class="proto">LC</td><td>Fiber — Lucent Connector. Small form factor, common in data centers</td></tr>
+        <tr><td class="proto">Punchdown</td><td>Terminates copper wire to patch panels / keystone jacks. Requires punchdown tool</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th>Connector</th><th>Used For</th></tr></thead>
+      <tbody>
+        <tr><td class="proto">microUSB</td><td>Older Android devices, peripherals</td></tr>
+        <tr><td class="proto">miniUSB</td><td>Older devices — slightly larger than micro</td></tr>
+        <tr><td class="proto">USB-C</td><td>Modern universal connector — reversible, supports USB/DisplayPort/HDMI/Thunderbolt</td></tr>
+        <tr><td class="proto">Lightning</td><td>Apple proprietary — 8-pin, reversible. iPhone/iPad (pre USB-C models)</td></tr>
+        <tr><td class="proto">Molex</td><td>4-pin power connector for older drives and fans</td></tr>
+        <tr><td class="proto">DB-9</td><td>9-pin serial connector. Legacy RS-232 serial ports</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- USB / THUNDERBOLT SPEEDS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">OBJ 3.2</div>
+    <div class="section-title">USB & Thunderbolt Versions and Speeds</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Version</th><th>Max Speed</th><th>Connector Color</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="proto">USB 1.1</td><td>12 Mbps</td><td class="usb-black">Black/White</td><td>Legacy. Rarely seen now</td></tr>
+      <tr><td class="proto">USB 2.0</td><td class="tag-amber">480 Mbps</td><td class="usb-black">Black</td><td>Hi-Speed. Still common for keyboards, mice, flash drives</td></tr>
+      <tr class="row-highlight"><td class="proto">USB 3.0 / 3.1 Gen 1</td><td class="tag-blue">5 Gbps</td><td class="usb-blue">Blue</td><td>SuperSpeed. Blue port = visual identifier</td></tr>
+      <tr><td class="proto">USB 3.1 Gen 2</td><td class="tag-green">10 Gbps</td><td class="usb-teal">Teal/Teal</td><td>SuperSpeed+</td></tr>
+      <tr><td class="proto">USB 3.2 Gen 2x2</td><td class="tag-green">20 Gbps</td><td class="usb-red">Red</td><td>Two 10 Gbps lanes. USB-C required</td></tr>
+      <tr class="row-highlight"><td class="proto">Thunderbolt 3</td><td class="tag-purple">40 Gbps</td><td>USB-C connector</td><td>Also carries DisplayPort + PCIe. Powers devices up to 100W. Daisy-chain up to 6 devices</td></tr>
+      <tr><td class="proto">Thunderbolt 4</td><td class="tag-purple">40 Gbps</td><td>USB-C connector</td><td>Same speed as TB3 but mandatory standards compliance. Dual 4K displays</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="margin-top:10px;"><strong>Thunderbolt visual identifier:</strong> ⚡ lightning bolt icon on the port. Max cable length: USB = 5m at 3.0 / Thunderbolt = 2m passive, 60m with active cable.</div>
+</div>
+
+<!-- FIBER TYPES -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num amber">OBJ 3.2</div>
+    <div class="section-title">Fiber Optic Types</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Type</th><th>Core Size</th><th>Distance</th><th>LED/Laser</th><th>Cost</th><th>Use Case</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="proto">Multimode (MMF)</td><td>50 or 62.5 µm</td><td>Up to ~2km</td><td>LED</td><td>Lower</td><td>Short runs — inside buildings, data centers, campus networks</td></tr>
+      <tr class="row-highlight"><td class="proto">Single-mode (SMF)</td><td>8–10 µm</td><td>Up to 100km+</td><td>Laser</td><td>Higher</td><td>Long runs — between buildings, WAN connections, ISP infrastructure</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="margin-top:10px;">Memory trick: <strong>Single-mode = Single path of light = farther.</strong> Multimode = Multiple paths = shorter distances but cheaper.</div>
+</div>
+
+<!-- VIDEO CABLES -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num green">OBJ 3.2</div>
+    <div class="section-title">Video Cables — Quick Reference</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Cable</th><th>Signal</th><th>Audio?</th><th>Max Resolution</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="proto">VGA</td><td>Analog</td><td>No</td><td>Up to 2048×1536</td><td>15-pin blue trapezoidal connector. Legacy. No audio.</td></tr>
+      <tr><td class="proto">DVI</td><td>Digital (+ analog DVI-I)</td><td>No</td><td>Up to 2560×1600</td><td>White rectangular connector. DVI-D = digital only. DVI-I = digital+analog.</td></tr>
+      <tr class="row-highlight"><td class="proto">HDMI</td><td>Digital</td><td>Yes</td><td>8K (v2.1)</td><td>Most common consumer connector. Carries audio + video. HDMI 2.1 supports 4K@144Hz, 8K@60Hz.</td></tr>
+      <tr class="row-highlight"><td class="proto">DisplayPort</td><td>Digital</td><td>Yes</td><td>8K+ (v2.0)</td><td>Locking connector. Preferred for PC monitors. Supports daisy-chaining. DP 2.1 supports dual 4K@144Hz.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- RAM CHARACTERISTICS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num red">OBJ 3.3</div>
+    <div class="section-title">RAM Generations — DDR Specifications</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Type</th><th>Max per DIMM</th><th>Pins (DIMM)</th><th>Pins (SODIMM)</th><th>Voltage</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="proto">DDR3</td><td>16 GB</td><td>240</td><td>204</td><td>1.5V</td><td>Older systems. Not compatible with DDR4 slots</td></tr>
+      <tr class="row-highlight"><td class="proto">DDR4</td><td>64 GB</td><td>288</td><td>260</td><td>1.2V</td><td>Current mainstream standard. Faster frequencies than DDR3</td></tr>
+      <tr class="row-highlight"><td class="proto">DDR5</td><td>128 GB+</td><td>288</td><td>262</td><td>1.1V</td><td>Newest. Faster & more efficient. NOT backward compatible with DDR4 (key notch moved)</td></tr>
+    </tbody>
+  </table>
+  <div class="grid-2" style="margin-top:14px;">
+    <div class="card">
+      <h3>Form Factors</h3>
+      <table>
+        <tbody>
+          <tr><td class="proto">DIMM</td><td>Desktop RAM — full size (133.35mm)</td></tr>
+          <tr><td class="proto">SODIMM</td><td>Laptop/small form factor RAM — about half the length. Used in laptops, NUCs, mini-PCs</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Channel Configurations</h3>
+      <table>
+        <tbody>
+          <tr><td class="proto">Single</td><td>1 module — baseline bandwidth</td></tr>
+          <tr><td class="proto">Dual-channel</td><td>2 matched modules — 2x bandwidth. Most common</td></tr>
+          <tr><td class="proto">Triple-channel</td><td>3 modules — older Intel platforms</td></tr>
+          <tr><td class="proto">Quad-channel</td><td>4 modules — workstations/servers</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="note amber" style="margin-top:12px;"><strong>ECC RAM (Error Correcting Code):</strong> Detects and corrects single-bit memory errors. Used in servers and workstations where data integrity is critical. NOT used in typical consumer PCs. Requires ECC-compatible motherboard and CPU.</div>
+  <div class="note" style="margin-top:10px;"><strong>Virtual RAM / Paging:</strong> When physical RAM is full, the OS uses a portion of the storage drive as overflow RAM. Called <em>pagefile.sys</em> in Windows, <em>swap</em> in Linux/macOS. Much slower than physical RAM. High disk activity + slowness = system is paging. Solution: add more physical RAM.</div>
+</div>
+
+<!-- STORAGE DEVICES / RAID -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num purple">OBJ 3.4</div>
+    <div class="section-title">RAID Levels</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>RAID Level</th><th>Name</th><th>Min Drives</th><th>Fault Tolerance</th><th>Performance</th><th>Capacity</th><th>How it Works</th></tr>
+    </thead>
+    <tbody>
+      <tr class="row-hl-green"><td class="port">RAID 0</td><td>Striping</td><td>2</td><td class="tag-red">NONE — 1 drive fails = ALL data lost</td><td class="tag-green">Best read/write speed</td><td>100% of all drives</td><td>Data split across drives. Pure speed, zero protection</td></tr>
+      <tr class="row-highlight"><td class="port">RAID 1</td><td>Mirroring</td><td>2</td><td class="tag-green">1 drive can fail</td><td>Normal read, slower write</td><td>50% (n/2)</td><td>Exact duplicate on both drives. Mirror image</td></tr>
+      <tr><td class="port">RAID 5</td><td>Striping + Parity</td><td>3</td><td class="tag-green">1 drive can fail</td><td>Good read, moderate write</td><td>(n-1) drives</td><td>Parity spread across all drives. Rebuild on failure</td></tr>
+      <tr><td class="port">RAID 6</td><td>Striping + Double Parity</td><td>4</td><td class="tag-green">2 drives can fail</td><td>Good read, slower write</td><td>(n-2) drives</td><td>Two parity blocks. Better protection than RAID 5</td></tr>
+      <tr class="row-highlight"><td class="port">RAID 10</td><td>Mirror + Stripe (1+0)</td><td>4</td><td class="tag-green">1 per mirrored pair</td><td class="tag-green">Best of both</td><td>50%</td><td>RAID 1 mirrors, then striped. Speed + redundancy</td></tr>
+    </tbody>
+  </table>
+  <div class="grid-2" style="margin-top:12px;">
+    <div class="note red"><strong>RAID 0 = NO fault tolerance.</strong> One drive fails, everything is gone. Only for speed-critical, replaceable data.</div>
+    <div class="note green"><strong>RAID 10 = Best performance + redundancy</strong>, but costs 50% of capacity. Go-to for databases and critical apps.</div>
+  </div>
+</div>
+
+<!-- SSD INTERFACES -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">OBJ 3.4</div>
+    <div class="section-title">SSD Interfaces & Form Factors</div>
+  </div>
+  <div class="grid-2">
+    <table>
+      <thead><tr><th>Interface</th><th>Speed</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="proto">SATA</td><td>~600 MB/s</td><td>Slowest SSD interface. Used with 2.5" and some M.2 drives</td></tr>
+        <tr class="row-highlight"><td class="proto">NVMe (PCIe)</td><td>3,500–7,000 MB/s</td><td>Fastest. Connects via M.2 slot or PCIe slot. NVMe = Non-Volatile Memory Express</td></tr>
+        <tr><td class="proto">SAS</td><td>~1,200 MB/s</td><td>Enterprise/servers. More reliable than SATA. Hot-swappable</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th>Form Factor</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="proto">2.5"</td><td>Traditional laptop/desktop bay. Uses SATA interface</td></tr>
+        <tr><td class="proto">3.5"</td><td>Desktop HDD form factor. HDDs only, not SSDs</td></tr>
+        <tr class="row-highlight"><td class="proto">M.2</td><td>Small rectangular card. Supports both SATA and NVMe protocols</td></tr>
+        <tr><td class="proto">mSATA</td><td>Mini-SATA. Older small form factor. Largely replaced by M.2</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:10px;"><strong>HDD Spindle Speeds:</strong> 5400 RPM (laptops, quiet) vs 7200 RPM (desktops, faster) vs 10,000–15,000 RPM (enterprise/servers). Higher RPM = faster access = more heat/noise.</div>
+</div>
+
+<!-- MOTHERBOARD FORM FACTORS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num amber">OBJ 3.5</div>
+    <div class="section-title">Motherboard Form Factors</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Form Factor</th><th>Size</th><th>Expansion Slots</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr class="row-highlight"><td class="proto">ATX</td><td>305×244mm</td><td>7 slots</td><td>Full-size desktop standard. Most expandable. Most common</td></tr>
+      <tr><td class="proto">microATX (mATX)</td><td>244×244mm</td><td>4 slots</td><td>Smaller, fits in ATX cases. Good for mid-tower builds</td></tr>
+      <tr><td class="proto">Mini-ITX (ITX)</td><td>170×170mm</td><td>1 slot</td><td>Very small. HTPCs, compact builds. Limited expansion</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="margin-top:10px;"><strong>Compatibility note:</strong> ATX, microATX, and mini-ITX all share the same screw hole positions and can often fit in the same mid-tower or full-tower ATX case (smaller boards fit in bigger cases, not vice versa).</div>
+</div>
+
+<!-- PCIe SLOTS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num green">OBJ 3.5</div>
+    <div class="section-title">PCIe — Expansion Slot Lanes</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Slot</th><th>Lanes</th><th>Typical Use</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="proto">PCIe x1</td><td>1 lane</td><td>Sound cards, NICs, USB expansion cards</td><td>Small slot</td></tr>
+      <tr><td class="proto">PCIe x4</td><td>4 lanes</td><td>M.2 adapters, some SSDs, capture cards</td><td>Medium slot</td></tr>
+      <tr><td class="proto">PCIe x8</td><td>8 lanes</td><td>Some GPUs, RAID cards</td><td>Long slot, may only use 8 lanes electrically</td></tr>
+      <tr class="row-highlight"><td class="proto">PCIe x16</td><td>16 lanes</td><td>Primary GPU slot</td><td>Full-length slot. This is where the graphics card goes</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="margin-top:10px;">A larger card can fit in a smaller slot (x16 card in x8 slot) but runs at the slower slot's speed. Slots are backward/forward compatible in size.</div>
+</div>
+
+<!-- POWER SUPPLY -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num red">OBJ 3.6</div>
+    <div class="section-title">Power Supply (PSU) — Key Facts</div>
+  </div>
+  <div class="grid-2">
+    <table>
+      <thead><tr><th>Connector / Spec</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td class="proto">20+4 pin</td><td>Main motherboard power connector (24-pin total)</td></tr>
+        <tr><td class="proto">4/8-pin EPS</td><td>CPU power connector</td></tr>
+        <tr><td class="proto">6/8-pin PCIe</td><td>GPU power connector for dedicated graphics cards</td></tr>
+        <tr><td class="proto">SATA power</td><td>L-shaped connector for SATA drives</td></tr>
+        <tr><td class="proto">Molex</td><td>4-pin for older devices, fans, case lighting</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th>Voltage Rail</th><th>Powers</th></tr></thead>
+      <tbody>
+        <tr><td class="proto">3.3V</td><td>RAM, chipset, some circuit logic</td></tr>
+        <tr><td class="proto">5V</td><td>USB ports, older drives, logic circuits</td></tr>
+        <tr class="row-highlight"><td class="proto">12V</td><td>CPU, GPU, motors (HDDs/fans) — most power-hungry components</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;"><strong>Input voltage:</strong> US = 110–120 VAC. International = 220–240 VAC. Some PSUs are dual-voltage (auto-switching). Plugging a 120V PSU into 240V outlet without a converter = immediate damage. <strong>Modular PSU</strong> = detachable cables (cleaner builds). <strong>Redundant PSU</strong> = two power supplies, one takes over if the other fails (servers).</div>
+</div>
+
+<!-- LASER PRINTER EP PROCESS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num purple">OBJ 3.8</div>
+    <div class="section-title">Laser Printer — Electrophotographic (EP) Process (7 Steps)</div>
+  </div>
+  <div style="display:flex; gap:20px; flex-wrap:wrap;">
+    <div class="card" style="flex:1; min-width:280px;">
+      <h3>The 7 Steps in Order</h3>
+      <ul class="step-list">
+        <li><span class="step-num">1</span><div><strong class="tag-blue">Processing</strong> — RIP (Raster Image Processor) converts data to a bitmap image</div></li>
+        <li><span class="step-num">2</span><div><strong class="tag-amber">Charging</strong> — Primary corona wire/roller charges the drum to a uniform −600V</div></li>
+        <li><span class="step-num">3</span><div><strong class="tag-green">Exposing</strong> — Laser beam draws the image on the drum, reducing charge to −100V where toner should stick</div></li>
+        <li><span class="step-num">4</span><div><strong class="tag-purple">Developing</strong> — Toner (negatively charged) is attracted to the lighter areas drawn by the laser</div></li>
+        <li><span class="step-num">5</span><div><strong class="tag-amber">Transferring</strong> — Transfer belt/roller gives paper a positive charge, pulling toner from drum to paper</div></li>
+        <li><span class="step-num">6</span><div><strong class="tag-red">Fusing</strong> — Fuser assembly (heat + pressure rollers) melts and bonds toner permanently to paper</div></li>
+        <li><span class="step-num">7</span><div><strong class="tag-blue">Cleaning</strong> — Cleaning blade scrapes remaining toner off drum for next page</div></li>
+      </ul>
+    </div>
+    <div style="flex:1; min-width:280px;">
+      <div class="note amber"><strong>Mnemonic:</strong> <em>"Please Charge Every Day, The Fuser Cleans"</em><br>Processing → Charging → Exposing → Developing → Transferring → Fusing → Cleaning</div>
+      <div class="note" style="margin-top:10px;"><strong>Troubleshooting links:</strong><br>
+      • Toner smears = Fuser failing<br>
+      • Ghost image = Drum not cleaned / drum issue<br>
+      • Vertical line full length = Scratched drum<br>
+      • Faded output = Low toner or bad developer<br>
+      • Multiple sheets feeding = Worn separation pad<br>
+      • Paper not picking up = Worn pickup rollers</div>
+      <div class="note green" style="margin-top:10px;"><strong>Maintenance kit</strong> includes: fuser, pickup rollers, transfer roller, separation pads. Replace at manufacturer-recommended page count intervals.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRINTER TYPES -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">OBJ 3.8</div>
+    <div class="section-title">Printer Technology Comparison</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Type</th><th>Technology</th><th>Maintenance</th><th>Exam Trigger</th></tr>
+    </thead>
+    <tbody>
+      <tr class="row-highlight"><td class="proto">Laser</td><td>Toner + heat fusing. EP process (7 steps)</td><td>Replace toner, fuser, rollers. Clean drum</td><td>Office workhorse. Toner smear = fuser. Ghost image = drum</td></tr>
+      <tr><td class="proto">Inkjet</td><td>Liquid ink sprayed through nozzles</td><td>Clean printhead, replace cartridges, calibrate</td><td>Photo printing. Clogged head = streaky output</td></tr>
+      <tr><td class="proto">Thermal</td><td>Heat-sensitive paper darkens with heat</td><td>Clean with IPA 90%+. No ink/toner</td><td>Receipt printers. Blank output = paper loaded backwards</td></tr>
+      <tr><td class="proto">Impact / Dot Matrix</td><td>Pin strikes ink ribbon against paper</td><td>Replace ribbon, check tractor feed</td><td>Only printer that can print multipart/NCR forms</td></tr>
+      <tr><td class="proto">3D (FDM)</td><td>Filament melted and layered (PLA/ABS)</td><td>Level print bed, replace filament, unclog nozzle</td><td>Bed must be level. FDM = most common type</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════ -->
+<div class="sep-label">Domain 4 — Virtualization & Cloud</div>
+<!-- ═══════════════════════════════════════════════ -->
+
+<!-- CLOUD MODELS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">OBJ 4.2</div>
+    <div class="section-title">Cloud Service Models & Deployment Types</div>
+  </div>
+  <div class="grid-2">
+    <div>
+      <table>
+        <thead><tr><th>Model</th><th>Name</th><th>You Manage</th><th>Exam Trigger</th></tr></thead>
+        <tbody>
+          <tr class="row-highlight"><td class="proto">IaaS</td><td>Infrastructure as a Service</td><td>OS, apps, data</td><td>"Raw compute/storage/networking" — AWS EC2, Azure VMs</td></tr>
+          <tr><td class="proto">PaaS</td><td>Platform as a Service</td><td>Apps, data</td><td>"Development platform" — Heroku, Azure App Service</td></tr>
+          <tr class="row-highlight"><td class="proto">SaaS</td><td>Software as a Service</td><td>Only data/settings</td><td>"Use software over browser" — Google Workspace, Office 365, Salesforce</td></tr>
+        </tbody>
+      </table>
+      <div class="note" style="margin-top:10px;"><strong>Memory trick:</strong> IaaS = you build the house (provider gives the land). PaaS = you decorate the house (provider built it). SaaS = you just live there (provider does everything).</div>
+    </div>
+    <div>
+      <table>
+        <thead><tr><th>Deployment</th><th>Definition</th></tr></thead>
+        <tbody>
+          <tr><td class="proto">Public</td><td>Shared infrastructure over the internet (AWS, Azure, GCP). Pay-as-you-go</td></tr>
+          <tr><td class="proto">Private</td><td>Cloud infrastructure exclusively for one organization. On-premises or hosted</td></tr>
+          <tr><td class="proto">Hybrid</td><td>Mix of public + private cloud. Sensitive data on-prem, other workloads in public cloud</td></tr>
+          <tr><td class="proto">Community</td><td>Shared by organizations with common interests (e.g., government agencies)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- HYPERVISORS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num amber">OBJ 4.1</div>
+    <div class="section-title">Hypervisors — Type 1 vs Type 2</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Type</th><th>Name</th><th>How It Works</th><th>Examples</th><th>Use Case</th></tr>
+    </thead>
+    <tbody>
+      <tr class="row-highlight"><td class="port">Type 1</td><td>Bare Metal</td><td>Runs directly on hardware — no host OS underneath</td><td>VMware ESXi, Microsoft Hyper-V, Citrix XenServer</td><td>Servers, data centers, enterprise virtualization</td></tr>
+      <tr><td class="port">Type 2</td><td>Hosted</td><td>Runs as an application on top of a host OS (Windows/macOS/Linux)</td><td>VMware Workstation, VirtualBox, Parallels</td><td>Developers, testing, running multiple OSes on a desktop</td></tr>
+    </tbody>
+  </table>
+  <div class="grid-2" style="margin-top:12px;">
+    <div class="note"><strong>VM Network Modes:</strong><br>
+    • <strong>NAT</strong> = VM shares host's IP. VM → internet works, external → VM blocked<br>
+    • <strong>Bridged</strong> = VM gets its own IP on network. Appears as separate device<br>
+    • <strong>Host-only</strong> = VM can only talk to host, isolated from network</div>
+    <div class="note amber"><strong>VM Requirements:</strong><br>
+    • CPU with Intel VT-x or AMD-V (must be enabled in BIOS/UEFI)<br>
+    • RAM is additive (host + all VMs running simultaneously)<br>
+    • VM escaping = biggest security threat (guest VM breaks out to host)</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════ -->
+<div class="sep-label">Domains 1 & 5 — Mobile Devices & Troubleshooting</div>
+<!-- ═══════════════════════════════════════════════ -->
+
+<!-- MOBILE DEVICE CONNECTION TYPES -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num green">OBJ 1.2 / 1.3</div>
+    <div class="section-title">Mobile Device Connections & Standards</div>
+  </div>
+  <div class="grid-2">
+    <table>
+      <thead><tr><th>Technology</th><th>IEEE Standard</th><th>Range</th><th>Key Uses</th></tr></thead>
+      <tbody>
+        <tr><td class="proto">Bluetooth</td><td>802.15.1</td><td>~10m (class 2)</td><td>Headsets, keyboards, mice, speakers, car integration</td></tr>
+        <tr class="row-highlight"><td class="proto">NFC</td><td>—</td><td>~4cm (1.5 in)</td><td>Tap-to-pay (Apple Pay, Google Pay), access cards, Bluetooth pairing bootstrap</td></tr>
+        <tr><td class="proto">RFID</td><td>—</td><td>Meters (varies)</td><td>Asset tracking, inventory, access badges, pet microchips. Mostly one-way</td></tr>
+        <tr><td class="proto">Wi-Fi Hotspot</td><td>802.11</td><td>Normal Wi-Fi</td><td>Phone acts as wireless router, shares cellular data</td></tr>
+        <tr><td class="proto">Tethering</td><td>—</td><td>Cable</td><td>USB cable from phone to laptop to share cellular data. Wired hotspot</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th>Cellular Gen</th><th>Typical Speed</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="proto">3G</td><td>~1–3 Mbps</td><td>Legacy. HSPA+</td></tr>
+        <tr class="row-highlight"><td class="proto">4G LTE</td><td>~10–50 Mbps</td><td>Standard today. LTE = Long Term Evolution</td></tr>
+        <tr class="row-highlight"><td class="proto">5G</td><td>~100Mbps–10Gbps</td><td>Low-band (coverage), mid-band (balance), mmWave (speed, short range)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" style="margin-top:12px;"><strong>SIM vs eSIM:</strong> SIM (Subscriber Identity Module) = physical card identifying you to cellular network. eSIM = embedded chip programmable without physical card swap. IMEI = hardware ID of the phone itself (hardcoded). IMSI = identity of the user/account (stored on SIM).</div>
+</div>
+
+<!-- DISPLAY TYPES -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">OBJ 3.1</div>
+    <div class="section-title">Display Panel Types — LCD Subtypes</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Type</th><th>Response Time</th><th>Color Accuracy</th><th>Viewing Angles</th><th>Best For</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="proto">TN (Twisted Nematic)</td><td class="tag-green">Fastest (~1ms)</td><td class="tag-red">Poor</td><td class="tag-red">Narrow</td><td>Gaming (high refresh rate priority). Cheapest</td></tr>
+      <tr class="row-highlight"><td class="proto">IPS (In-Plane Switching)</td><td>Medium (~4ms)</td><td class="tag-green">Excellent</td><td class="tag-green">178° wide</td><td>Design work, photo editing, professional use</td></tr>
+      <tr><td class="proto">VA (Vertical Alignment)</td><td>Medium-slow</td><td>Good</td><td>Medium</td><td>Compromise — best contrast ratio. General use</td></tr>
+      <tr class="row-highlight"><td class="proto">OLED</td><td class="tag-green">Fastest (&lt;1ms)</td><td class="tag-green">Best (true black)</td><td class="tag-green">Best</td><td>Premium phones, TVs. Self-emissive — no backlight needed</td></tr>
+      <tr><td class="proto">Mini-LED</td><td>Fast</td><td>Very good</td><td>Good</td><td>Premium laptops/monitors. Better backlight control than LCD</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="margin-top:10px;"><strong>Backlight + Inverter:</strong> LCD panels need a backlight (CCFL fluorescent lamp OR LED). Laptops with CCFL backlight need an inverter (converts DC to AC). Dim screen visible at angle = backlight failure. No image but laptop makes sounds = backlight or inverter failed.</div>
+</div>
+
+<!-- TROUBLESHOOTING QUICK REFERENCE -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num red">OBJ 5.x</div>
+    <div class="section-title">Troubleshooting — Symptom-to-Cause Quick Reference</div>
+  </div>
+  <div class="grid-2">
+    <table>
+      <thead><tr><th colspan="2">Hardware Symptoms</th></tr></thead>
+      <tbody>
+        <tr><td>Computer shuts off after 10–15 min</td><td class="tag-amber">Overheating — check fans/thermal paste</td></tr>
+        <tr><td>Inaccurate date/time every boot</td><td class="tag-amber">Dead CMOS battery — replace coin cell</td></tr>
+        <tr><td>POST beep codes</td><td class="tag-red">RAM or video failure — check mobo manual</td></tr>
+        <tr><td>Swollen capacitors on motherboard</td><td class="tag-red">Replace motherboard immediately</td></tr>
+        <tr><td>Random crashes across multiple programs</td><td class="tag-red">Bad RAM — run MemTest86</td></tr>
+        <tr><td>HDD clicking/grinding</td><td class="tag-red">Physical failure imminent — backup NOW</td></tr>
+        <tr><td>S.M.A.R.T. warning appears</td><td class="tag-red">Drive predicting failure — backup and replace</td></tr>
+        <tr><td>No POST, fans spin, no display</td><td class="tag-amber">RAM not seated, or no RAM installed</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th colspan="2">Network Symptoms</th></tr></thead>
+      <tbody>
+        <tr><td>IP address starts with 169.254.x.x</td><td class="tag-red">DHCP failure — APIPA assigned. Check DHCP server</td></tr>
+        <tr><td>Can ping by IP, not by name</td><td class="tag-amber">DNS failure — check DNS settings</td></tr>
+        <tr><td>VoIP calls choppy / words drop</td><td class="tag-amber">Jitter — enable QoS, use 5 GHz</td></tr>
+        <tr><td>Everything slow, near kitchen</td><td class="tag-amber">2.4 GHz microwave interference — switch to 5 GHz</td></tr>
+        <tr><td>Port flapping (link cycling)</td><td class="tag-amber">Bad cable or failing NIC</td></tr>
+        <tr><td>Intermittent internet drops</td><td class="tag-blue">Ping gateway first — if OK, ISP issue</td></tr>
+        <tr><td>Authentication failure on Wi-Fi</td><td class="tag-amber">Wrong passphrase, encryption mismatch, expired cert</td></tr>
+        <tr><td>Slow wireless speeds near router</td><td class="tag-amber">Interference — check channel overlap, try 5 GHz</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- DISPLAY TROUBLESHOOTING -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num amber">OBJ 5.3</div>
+    <div class="section-title">Display Troubleshooting — Symptom to Cause</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Symptom</th><th>Likely Cause / Action</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Fuzzy / blurry image</td><td>Resolution not set to native. Set to monitor's native resolution</td></tr>
+      <tr><td>Dead pixels (stuck black)</td><td>Manufacturing defect — cannot fix. May qualify for replacement</td></tr>
+      <tr><td>Burn-in / image ghosting (LCD)</td><td>Static image displayed too long. Run solid white screen for extended period</td></tr>
+      <tr><td>Projector dims, then goes dark</td><td>Bulb failure. Replace metal-halide bulb. Reset lamp timer after replacement</td></tr>
+      <tr><td>Dim laptop screen (visible at extreme angle)</td><td>Backlight failure — replace backlight or display assembly</td></tr>
+      <tr><td>Flickering display</td><td>Check/reseat video cable. Try different cable or port</td></tr>
+      <tr><td>Projector shuts off intermittently</td><td>Clogged dust filter → thermal shutdown. Clean filter</td></tr>
+      <tr><td>Wrong color tint</td><td>Check Night Light / Night Mode setting. Check monitor color preset</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- NETWORKING TOOLS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num green">OBJ 2.8</div>
+    <div class="section-title">Networking Tools — What Each One Does</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Tool</th><th>What It Does</th><th>Exam Scenario Trigger</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="proto">Crimper</td><td>Attaches RJ-45 or RJ-11 connectors to the end of a cable</td><td>"Making a patch cable"</td></tr>
+      <tr><td class="proto">Cable Stripper</td><td>Removes outer jacket of cable without damaging inner wires</td><td>"Preparing cable for termination"</td></tr>
+      <tr class="row-highlight"><td class="proto">Toner Probe</td><td>Generates a tone on one end; probe on other end finds the cable in a bundle without cutting</td><td>"Find which cable in a wall/bundle"</td></tr>
+      <tr><td class="proto">Punchdown Tool</td><td>Seats wires into 66-block or 110-block patch panels and keystone jacks</td><td>"Wiring a patch panel"</td></tr>
+      <tr class="row-highlight"><td class="proto">Cable Tester</td><td>Verifies continuity and correct wiring of both ends of a cable</td><td>"Check if a cable works before installing"</td></tr>
+      <tr><td class="proto">Loopback Plug</td><td>Plugs into a port and loops the signal back to test the NIC or port</td><td>"Testing a NIC without connecting to network"</td></tr>
+      <tr class="row-highlight"><td class="proto">Wi-Fi Analyzer</td><td>Shows Wi-Fi networks, signal strength, channel usage — used for site surveys</td><td>"Find channel congestion or coverage dead zones"</td></tr>
+      <tr><td class="proto">Network Tap</td><td>Passively copies network traffic for analysis without disrupting traffic flow</td><td>"Monitor traffic without interrupting the network"</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  CompTIA A+ Core 1 (220-1201) Memorization Reference · All content sourced from CompTIA objectives, Sybex Study Guide, and Professor Messer course notes · Use this as a glance-over reference before exam day
+</div>
+
+</body>
+</html>
